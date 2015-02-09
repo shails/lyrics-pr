@@ -1,0 +1,20 @@
+
+  <div class="form-group">
+    <label for="song title">Title</label>
+    <input type="text" class="form-control" name="song[title]" value="<%= @song.title %>" placeholder="Enter Song Title" >
+  </div>
+  <div class="form-group">
+    <label for="lyrics">Lyrics</label>
+    <textarea class="form-control" rows="3" name="song[lyrics]" ><%= @song.lyrics %></textarea>
+  </div>
+  
+  <div class="form-group">
+    <label for="length">Length</label>
+    <input type="time" class="form-control" name="song[length]" value="<%= @song.length %>"placeholder="Length">
+  </div>
+  <div class="form-group">
+    <label for="releasedon">Released on:</label>
+    <input type="date" class="form-control" name="song[released_on]" value="<%= @song.released_on.strftime("%m/%d/%Y") if @song.released_on %>" placeholder="mm/dd/yyyy">
+  </div>
+  
+  <button type="submit" class="btn btn-default"value="save song" >Submit</button>

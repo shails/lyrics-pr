@@ -1,0 +1,10 @@
+<h1 class="all_head"> <%= @song.title %></h1>
+<p> Released Date: <%= @song.released_on.strftime("%e %B %Y") if @song.released_on  %></p>
+<p> Song Length: <%= @song.length/60 %> mins <%= @song.length%60 %> sec </p>
+<pre> <%= @song.lyrics %></pre>
+<p> <a href="/songs" > Back to Songs Index </a> </p>
+<p> <a href="/songs/<%= @song.id %>/edit">Edit</a> </p>
+<form action="/songs/<%= @song.id %>" method="post">
+<input type="hidden" name="_method" value="DELETE">
+<input type="submit" value="DELETE">
+</form>

@@ -4,7 +4,12 @@ require 'sass'
 require './song'
 get('/css/custom.css'){ scss :custom }
 
-
+configure :development do
+	DataMapper.setup(:default, "sqlite3://#{Dir.pwd}/development.db")
+end
+configure :production do
+	DataMapper.setup(:default, ENV['DATABASE_url'])
+end
 
 configure do
 	enable :sessions

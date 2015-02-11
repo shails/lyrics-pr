@@ -1,5 +1,6 @@
 require 'sinatra'
 require 'sinatra/reloader' if development?
+require 'sinatra/flash'
 require 'sass'
 require './song'
 get('/css/custom.css'){ scss :custom }
@@ -16,23 +17,45 @@ configure do
 	set :username, 'frank'
 	set :password, '1234'
 end
+before do
+	set_title
+end
+
+helpers do
+def css(*stylesheets)
+	stylesheets.map do |stylesheet|
+		"<link href=\"css/#{stylesheet}.css\" media=\"screen, projection\" rel=\"stylesheet\" />"
+	end.join
+end
+def mcss(*stylesheets)
+	stylesheets.map do |stylesheet|
+		"<link href=\"css/#{stylesheet}.min.css\" media=\"screen, projection\" rel=\"stylesheet\" />"
+	end.join
+end
+def active?(path='/')
+	(request.path==path || request.path==path+'/') ? "active" : nil
+	end
+	def set_title
+		@title ||= "Songs By Sinatra"
+	end
+end
 
 get '/login' do
 	erb :login
 end
 
 get '/' do 
-	@title = 'Song by Sinatra'
+	@title = 'Home'
 	erb :home
 
 end
 
 get '/about' do
-	@title='about'
+	@title='About'
 	erb :about
 end
 get '/contact' do
-	@title='contact'
+	@title='Contact'
 	erb :contact
 end
 

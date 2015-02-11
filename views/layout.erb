@@ -1,5 +1,5 @@
 
-<% title = "Songs By Sinatra" %>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -10,20 +10,25 @@
     <meta name="author" content="">
     <link rel="icon" href="images/favicon.ico">
 
-    <title><%= @title || "Songs By Sinatra" %></title>
+    <title><%= @title %> | Song By Sinatra</title>
 
     <!-- Bootstrap core CSS -->
+     <!--<link rel="stylesheet" href="css/bootstrap.min.css">-->
+     <!-- Bootstrap core CSS -->
    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
 
 <!-- Optional theme -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+
+<!-- Optional theme -->
+<!--<link rel="stylesheet" href="css/bootstrap-theme.min.css">-->
 
     <!-- Custom styles for this template -->
     <link href="css/custom.css" rel="stylesheet">
 
     <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
     <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
-    <script src="../../assets/js/ie-emulation-modes-warning.js"></script>
+    
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -37,10 +42,11 @@
     <%= erb :nav %> <!-- use of partials in sinatra-->
 
     <div class="container">
-
+      <section class="bg-info"><%= styled_flash %></section>
       <div class="head">       
         <%= yield %>
       </div>
+      
 
     </div><!-- /.container -->
 
@@ -51,6 +57,6 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
+   
   </body>
 </html>

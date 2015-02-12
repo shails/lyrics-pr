@@ -1,3 +1,8 @@
+$light_blue:#DFF0D8;
+$jumbo:#78C0A8;
+$home_color:#FCEBB6;
+
+
 .head{
 	text-align: center;
 	padding: 40px 15px;
@@ -8,12 +13,57 @@
 	padding:40px 15px;
 }
 
-.flash {
-width: 600px;
-padding: 5px;
-font-weight: bold;
-margin: 20px;
-background: lighten($red, 60%);
-color: $red;
-border: 1px solid $red;
+.flash{
+	padding:15px;
+	background-color:$light_blue;
 }
+/*bootstrap css changes*/
+.navbar{
+	margin-bottom:0px;
+	border-radius:0px;
+}
+.navbar-inverse{
+	border-color:transparent;
+}
+/* navbar-brand image hack  */
+.navbar-brand img{
+	margin-top:-6px;
+}
+.navbar-inverse .navbar-brand{
+	color:$home_color;
+}
+.jumbotron{
+    background-color:$jumbo;
+	margin-bottom:0px;
+}
+.page-header{
+	border-bottom:0;
+}
+.home{
+	background-color:$home_color;
+}
+
+
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+  position: relative;
+  min-height: 100%;
+}
+body {
+  /* Margin bottom by footer height */
+  margin-bottom: 60px;
+}
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  height: 60px;
+  background-color: #f5f5f5;
+}
+.text-muted{
+	margin:20px 0px;
+}
+

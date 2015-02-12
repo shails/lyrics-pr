@@ -62,7 +62,7 @@ end
 
 put '/songs/:id' do
 	song = find_song
-	song.update(params[:song])
+	flash[:notice] = "Song successfully updated" if song.update(params[:song])
 	redirect to("/songs/#{song.id}")
 end
 
